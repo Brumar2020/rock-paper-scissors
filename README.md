@@ -1,0 +1,1 @@
+This program is a way to test the JavaScript code that I have learned by creating a Rock, Paper, Scissors game.
