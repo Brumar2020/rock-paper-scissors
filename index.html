@@ -6,85 +6,13 @@
 </head>
 <body>
 
-  <p>Click the button to play 5 rounds of Rock, Paper, Scissors</p>
-  <button onclick="game()">Play</button>
+  <p>Click the buttons to play a game of Rock, Paper, Scissors to 5</p>
+  <input type="button" value="rock"></input>
+  <input type="button" value="paper"></input>
+  <input type="button" value="scissors"></input>
+  <div id="results"></div>
+  <script src="script.js"></script>
 
-  <script>
-      function computerPlay() {
-        let numb = Math.floor(Math.random() * (3 + 1));
-        let compPick;
-        if (numb == 1){
-          compPick = "rock";
-        }
-    
-        else if (numb == 2){
-          compPick = "paper";
-        }
-
-        else{
-          compPick = "scissors";
-        }
-        return compPick;
-      }
-
-      function playerPlay() {
-        playerPick = prompt("Please enter rock, paper, or scissors");
-        playerChoice = playerPick.toLowerCase().replace(/\s/g, "");
-        while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors"){
-          alert("Please try again and enter either rock, paper, or scissors");
-          playerPick = prompt("Please enter rock, paper, or scissors");
-          playerChoice = playerPick.toLowerCase().replace(/\s/g, "");
-        }
-        
-          return playerChoice;
-        }
-      
-
-      function game() {
-        for (i = 0, a = 0, b = 0; i < 5; i++){
-
-          let player = playerPlay();
-          let computer = computerPlay();
-
-          if (player === computer){
-            alert("This round is a draw. You both chose " + player + ".");
-          }
-
-          else if (player === "rock" && computer === "scissors"){
-            alert("You win this round! You chose rock and the computer chose scissors.");
-            a++;
-          }
-
-          else if (player === "paper" && computer === "rock"){
-            alert("You win this round! You chose paper and the computer chose rock.");
-            a++;
-          }
-
-          else if (player === "scissors" && computer === "paper"){
-            alert("You win this round! You chose scissors and the computer chose paper.");
-            a++;
-          }
-
-          else {
-            alert("I'm sorry, you lose this round. You chose " + player + " and the computer chose " + computer + "." );
-            b++;
-          }
-        }
-
-        if (a === b){
-            return alert( "It's a draw! You won " + a + " round(s) and the computer won " + b + " round(s).");
-          }
-
-          else if (a > b) {
-            return alert("Congratulations! You won " + a + " round(s) and the computer won " + b + " round(s).");
-          }
-
-          else {
-            return alert("Nice try! You won " + a + " round(s) and the computer won " + b + " round(s).");
-          }
-        
-      }
-  </script>
 </body>
 </html>
 
